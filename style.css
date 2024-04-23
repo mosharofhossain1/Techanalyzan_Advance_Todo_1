@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#f6f6f6 ;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container{
+    width: 700px;
+    margin:0px auto;
+}
+header{
+    padding: 10px;
+    height: 170px;
+    width: 900px;
+    margin: auto;
+    border-radius: 9px;
+    background-image: linear-gradient(to right, #bd3de7e8, #4298f1de), url(header-img.jpg);
+}
+ 
+.todoTitle{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
+    text-align: left;
+}
+#input_area{
+    background-color: #f6f6f6;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 7px;
+}
+#input_area input{
+    flex-basis: 80%;
+    background-color: #fff;
+}
+#input_area button{
+    background-color: #A541FF;
+    color: white;
+    cursor: pointer;
+}
+#input_area input, button{
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: none;
+    font-weight: bold;
+}
+#input_area input:focus{
+    border-color: none;
+}
+
+.listContainer{
+    overflow-y: scroll;
+    height: 300px;
+    margin-top: 20px;
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container, header{
+        width: 100%;
+        padding: 5px;
+    }
+}
