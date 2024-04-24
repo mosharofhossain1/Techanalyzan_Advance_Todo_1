@@ -59,6 +59,8 @@ header{
     overflow-y: scroll;
     height: 300px;
     margin-top: 20px;
+    width: 700px;
+    scroll-snap-type: none;
 }
 
 .listStyle{
@@ -86,3 +88,4 @@ header{
         padding: 5px;
     }
 }
+
