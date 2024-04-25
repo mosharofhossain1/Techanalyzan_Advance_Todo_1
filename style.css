@@ -56,11 +56,11 @@ header{
 }
 
 #listContainer{
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 300px;
     margin-top: 20px;
     width: 700px;
-    scroll-snap-type: none;
+  
 }
 
 .listStyle{
@@ -72,15 +72,17 @@ header{
     padding:7px 10px;
     margin-bottom: 10px;
     border-radius: 7px;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; */
     
 }
 .isquare, .idelete::hover{
     cursor: pointer;
 }
-
+.inputStyle{
+    padding: 10px;
+}
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .container, header{
