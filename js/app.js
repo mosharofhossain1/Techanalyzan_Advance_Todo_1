@@ -35,12 +35,15 @@ function handleEnterEvent(e){
 // display input value show
 function displayinputValue(taskName) {
     const li = document.createElement('li');
+    li.classList.add('listStyle');
     li.innerHTML = `
                 <span id="taskName">${taskName}</span>
-                   <button id='edit'>E</button>
-                   <button id='delete'>X</button>
-    `;
-    li.classList.add('listStyle');
+                   <div>
+                   <button id='edit'>Edit</button>
+                   <button id='delete'>Delete</button>
+                   </div>
+    `
+    
     listContainer.appendChild(li)
 }
 // Step- 2: add task to localStorage
@@ -83,7 +86,7 @@ function deleteTaskFromLocalStorage(taskName){
 }
 // delete handler 
 function deleteHander(targetEl){
-    const li = targetEl.parentElement;
+    const li = targetEl.parentElement.parentElement;
     const taskName = li.querySelector('#taskName').textContent;
     li.remove();
     deleteTaskFromLocalStorage(taskName)
@@ -106,13 +109,15 @@ function updateTaskLocalStorage(newTaskName,preVl){
 function updateTask(input,preVl){
     const newTaskName = input.value;
     const li = input.parentElement;
+    li.classList.add('inputStyle')
     li.innerHTML = `
                 <span id="taskName">${newTaskName}</span>
-                <button id='edit'>E</button>
-                <button id='delete'>X</button>
+                <div>
+                <button id='edit'>Edit</button>
+                <button id='delete'>Delete</button>
+                </div>
 
     `
-    
     updateTaskLocalStorage(newTaskName,preVl)
 }
 // eventHandler 
@@ -129,14 +134,14 @@ function updateHandler(e,preVl){
 
 // edit handler
 function editHandler(targetEl){
-    const li = targetEl.parentElement;
+    const li = targetEl.parentElement.parentElement;
     const preVl = li.querySelector('#taskName').textContent;
     li.innerHTML = `
                 <input onkeypress = 'eventHandler(event,"${preVl}")' value = '${preVl}'>
                 <button onclick = 'updateHandler(event,"${preVl}")'> Update </button>
 
     `
-    li.classList.add('inputStyle')
+    
 }
 // action handler function 
 function actionHandler(e){
